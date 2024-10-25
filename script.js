@@ -7,30 +7,34 @@ let tentarNovamenteBtn;
 let numeroAleatorio = Math.floor(Math.random() * 100) + 1;
 let tentativas = 10;
 
-function Adivinhar() {
-    let palpite = parseInt(numeroInput.value);
-    if (palpite >= 1 && palpite <= 100) {
-        tentativas--;
+function Adivinhar() { 
+    for (let i = 0; i < 1; i++) {
+        let palpite = parseInt(numeroInput.value);
 
-        if (palpite === numeroAleatorio) {
-            resultado.textContent = "Parabéns! Você acertou o número!";
-            adivinharBtn.disabled = true;
-            finalizarJogo();
-        } else if (palpite < numeroAleatorio) {
-            resultado.textContent = "O número é maior.";
+        if (palpite >= 1 && palpite <= 100) {
+            tentativas--;
+
+            if (palpite === numeroAleatorio) {
+                resultado.textContent = "Parabéns! Você acertou o número!";
+                finalizarJogo();
+                break;
+            } else if (palpite < numeroAleatorio) {
+                resultado.textContent = "O número é maior.";
+            } else {
+                resultado.textContent = "O número é menor.";
+            }
+
+            tentativasRestantes.textContent = `Tentativas restantes: ${tentativas}`;
+
+            if (tentativas === 0) {
+                resultado.textContent = `Fim de jogo! O número era ${numeroAleatorio}.`;
+                finalizarJogo();
+                break;
+            }
         } else {
-            resultado.textContent = "O número é menor.";
+            alert('Insira um número de 1 a 100 para jogar o jogo de adivinhação!');
+            break;
         }
-
-        tentativasRestantes.textContent = `Tentativas restantes: ${tentativas}`;
-
-        if (tentativas === 0 && palpite !== numeroAleatorio) {
-            resultado.textContent = `Fim de jogo! O número era ${numeroAleatorio}.`;
-            adivinharBtn.disabled = true;
-            finalizarJogo();
-        }
-    } else {
-        alert('Insira um número de 1 a 100 para jogar o jogo de adivinhação!')
     }
 }
 
