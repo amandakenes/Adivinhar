@@ -1,0 +1,82 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #FBEAEB;
+    color: #333;
+}
+
+.texto-area {
+    text-align: center;
+    font-size: 1.2em;
+    margin-bottom: 20px;
+}
+
+.input-area {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.input-area input[type="text"] {
+    width: 350px;
+    padding: 10px;
+    font-size: 1em;
+    border: 1px dotted #ccc;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    outline: none;
+}
+
+.input-area button {
+    width: 250px;
+    padding: 10px 20px;
+    font-size: 1em;
+    color: #fff;
+    background-color: #2F3C7E;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+}
+
+.input-area button:hover {
+    background-color: #0c102a;
+}
+
+.input-area button:disabled {
+    background-color: #FFFFFF;
+    color: rgba(157, 157, 157, 0.577);
+    cursor: not-allowed;
+}
+
+.resultado-area {
+    text-align: center;
+    font-size: 1.2em;
+}
+
+#tentativas-restantes {
+    text-decoration: underline;
+}
+
+#tentarNovamente {
+    width: 250px;
+    padding: 10px 20px;
+    font-size: 1em;
+    color: #fff;
+    background-color: #8AAAE5;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: background-color 0.3s ease;
+}
+
+#tentarNovamente:hover {
+    background-color: #7591c7;
+}
